@@ -21,6 +21,20 @@ public class Main {
 		System.out.println(cardTypeC6.getCardRank() + " " + cardTypeC6.getCardSuit());
 		System.out.println(cardTypeC7.getCardRank() + " " + cardTypeC7.getCardSuit());
 		System.out.println(cardTypeC8.getCardRank() + " " + cardTypeC8.getCardSuit());
+
+		CardTypeB cardTypeB = new CardTypeB(14, "Diamonds");
+		CardTypeB cardTypeB1 = new CardTypeB(10, "Spades");
+		CardTypeB cardTypeB2 = new CardTypeB(10, "Diamonds");
+		System.out.println(cardTypeB.toString());
+		System.out.println(cardTypeB.checkStrongerThan(cardTypeB1));
+		System.out.println(cardTypeB.checkCardBelongsOfStandartDeck());
+		System.out.println(cardTypeB1.equals(cardTypeB2));
+
+		System.out.println(cardTypeB.compareCards(cardTypeB1));
+		System.out.println(cardTypeB.compareCards(cardTypeB));
+		System.out.println(cardTypeB.compareCards(cardTypeB2));
+
+		System.out.println(CardTypeB.compareCards(cardTypeB, cardTypeB2));
 	}
 
 }
