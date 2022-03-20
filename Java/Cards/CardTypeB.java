@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class CardTypeB {
+public class CardTypeB implements Comparable<CardTypeB> {
 
 	private static final String[] ALLOWED_SUITS = new String[]{"Clubs", "Diamonds", "Spades", "Hearts", "Joker"};
 	private static final String[] SUITS_AFTER_TEN = new String[]{"Jack", "Queen", "King", "Ace"};
@@ -92,6 +92,10 @@ public class CardTypeB {
 
 	public static int compareCards(CardTypeB cardOne, CardTypeB cardTwo) {
 		return cardOne.compareCards(cardTwo);
+	}
+
+	public int compareTo(CardTypeB inCardTypeB) {
+		return compareCards(inCardTypeB);
 	}
 
 }

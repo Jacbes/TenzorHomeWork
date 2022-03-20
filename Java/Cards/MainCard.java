@@ -1,5 +1,5 @@
 
-public class Main {
+public class MainCard {
 	
 	public static void main(String[] args) {
 		CardTypeC cardTypeC = new CardTypeC("Diamonds");
