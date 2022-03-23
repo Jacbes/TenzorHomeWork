@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Folder extends BaseFileSystemNode {
+public class Folder extends AbstractFileSystemNode {
 
-    private final List<BaseFileSystemNode> childs = new ArrayList<>();
+    private final List<AbstractFileSystemNode> childs = new ArrayList<>();
 
-    public Folder(String inName, BaseFileSystemNode inParent, BaseFileSystemNode... inNodes) {
+    public Folder(String inName, AbstractFileSystemNode inParent, AbstractFileSystemNode... inNodes) {
         setName(inName);
         if (inParent instanceof Folder) {
             setParent(inParent);
@@ -14,7 +14,7 @@ public class Folder extends BaseFileSystemNode {
         } else {
             setParent(null);
         }
-        for (BaseFileSystemNode node : inNodes) {
+        for (AbstractFileSystemNode node : inNodes) {
             childs.add(node);
             if (node instanceof Folder) {
                 Folder parentNode = (Folder) node.getParent();
@@ -29,7 +29,7 @@ public class Folder extends BaseFileSystemNode {
         return name + "/";
     }
 
-    public List<BaseFileSystemNode> getChilds() {
+    public List<AbstractFileSystemNode> getChilds() {
         return childs;
     }
 

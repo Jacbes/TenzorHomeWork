@@ -2,6 +2,9 @@
 public class MainCard {
 	
 	public static void main(String[] args) {
+		CardTypeC cardTypeC_new = new CardTypeC(3, "Diamonds");
+		System.out.println(cardTypeC_new.getCardRank() + " " + cardTypeC_new.getCardSuit());
+
 		CardTypeC cardTypeC = new CardTypeC("Diamonds");
 		CardTypeC cardTypeC1 = new CardTypeC("Clubs");
 		CardTypeC cardTypeC2 = new CardTypeC("Diamonds");

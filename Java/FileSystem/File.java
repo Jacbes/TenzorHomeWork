@@ -1,7 +1,7 @@
 
-public class File extends BaseFileSystemNode {
+public class File extends AbstractFileSystemNode {
 
-    public File(String inName, BaseFileSystemNode inParent) {
+    public File(String inName, AbstractFileSystemNode inParent) {
         setName(inName);
         if (inParent instanceof Folder) {
             setParent(inParent);

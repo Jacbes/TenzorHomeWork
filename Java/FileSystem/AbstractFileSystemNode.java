@@ -27,4 +27,12 @@ abstract class AbstractFileSystemNode implements FileSystemNode {
         return resultPath;
     }
 
+    public void setParent(AbstractFileSystemNode inParent) {
+        this.parent = inParent;
+    }
+
+    public void setName(String inName) {
+        this.name = inName;
+    }
+
 }

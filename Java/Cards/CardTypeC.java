@@ -3,14 +3,14 @@ import java.util.Arrays;
 public class CardTypeC {
 
     private static final String[] ALLOWED_SUITS = new String[]{"Diamonds", "Clubs", "Hearts", "Spades", "Joker"};
-    private static final int[] suitRanks = new int[]{2, 2, 2, 2, 1};
-    private static final int maxRankOfStandartSuit = 15;
+    private static final int[] suitRanks = new int[]{1, 1, 1, 1, 0};
+    private static final int maxRankOfStandartSuit = 14;
     private static final int minRankOfStandartSuit = 2;
-    private static final int maxRankOfJoker = 3;
+    private static final int maxRankOfJoker = 2;
     private static final int minRankOfJoker = 1;
 
-    private int rank;
-    private String suit;
+    private final int rank;
+    private final String suit;
 
     public CardTypeC(int inRank, String inSuit) {
         this.suit = (checkInSuit(inSuit)) ? inSuit : null;
@@ -40,12 +40,23 @@ public class CardTypeC {
             return false;
         }
 
+        int indexOfInSuit = getIndexOfSuit(inSuit);
         if (inSuit.equals("Joker")) {
-            return minRankOfJoker <= inRank
-                    && maxRankOfJoker > inRank;
+            if (minRankOfJoker <= inRank
+                    && maxRankOfJoker >= inRank) {
+                suitRanks[indexOfInSuit] = inRank;
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            return minRankOfStandartSuit <= inRank
-                    && maxRankOfStandartSuit > inRank;
+            if (minRankOfStandartSuit <= inRank
+                    && maxRankOfStandartSuit >= inRank) {
+                suitRanks[indexOfInSuit] = inRank;
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
@@ -54,12 +65,16 @@ public class CardTypeC {
             return 0;
         }
 
-        int indexOfInSuit = Arrays.asList(ALLOWED_SUITS).indexOf(inSuit);
+        int indexOfInSuit = getIndexOfSuit(inSuit);
         if (ALLOWED_SUITS[indexOfInSuit].equals("Joker")) {
-            return (suitRanks[indexOfInSuit] < maxRankOfJoker) ? suitRanks[indexOfInSuit]++ : 0;
+            return (suitRanks[indexOfInSuit] < maxRankOfJoker) ? ++suitRanks[indexOfInSuit] : 0;
         } else {
-            return (suitRanks[indexOfInSuit] < maxRankOfStandartSuit) ? suitRanks[indexOfInSuit]++ : 0;
+            return (suitRanks[indexOfInSuit] < maxRankOfStandartSuit) ? ++suitRanks[indexOfInSuit] : 0;
         }
+    }
+
+    private int getIndexOfSuit(String inSuit) {
+        return Arrays.asList(ALLOWED_SUITS).indexOf(inSuit);
     }
 
     public int getCardRank() {
