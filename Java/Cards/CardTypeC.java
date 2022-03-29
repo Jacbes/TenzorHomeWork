@@ -4,8 +4,8 @@ public class CardTypeC {
 
     private static final String[] ALLOWED_SUITS = new String[]{"Diamonds", "Clubs", "Hearts", "Spades", "Joker"};
     private static final int[] suitRanks = new int[]{1, 1, 1, 1, 0};
-    private static final int maxRankOfStandartSuit = 14;
-    private static final int minRankOfStandartSuit = 2;
+    private static final int maxRankOfStandardSuit = 14;
+    private static final int minRankOfStandardSuit = 2;
     private static final int maxRankOfJoker = 2;
     private static final int minRankOfJoker = 1;
 
@@ -50,8 +50,8 @@ public class CardTypeC {
                 return false;
             }
         } else {
-            if (minRankOfStandartSuit <= inRank
-                    && maxRankOfStandartSuit >= inRank) {
+            if (minRankOfStandardSuit <= inRank
+                    && maxRankOfStandardSuit >= inRank) {
                 suitRanks[indexOfInSuit] = inRank;
                 return true;
             } else {
@@ -69,7 +69,7 @@ public class CardTypeC {
         if (ALLOWED_SUITS[indexOfInSuit].equals("Joker")) {
             return (suitRanks[indexOfInSuit] < maxRankOfJoker) ? ++suitRanks[indexOfInSuit] : 0;
         } else {
-            return (suitRanks[indexOfInSuit] < maxRankOfStandartSuit) ? ++suitRanks[indexOfInSuit] : 0;
+            return (suitRanks[indexOfInSuit] < maxRankOfStandardSuit) ? ++suitRanks[indexOfInSuit] : 0;
         }
     }
 

@@ -30,7 +30,7 @@ public class MainCard {
         CardTypeB cardTypeB2 = new CardTypeB(10, "Diamonds");
         System.out.println(cardTypeB.toString());
         System.out.println(cardTypeB.checkStrongerThan(cardTypeB1));
-        System.out.println(cardTypeB.checkCardBelongsOfStandartDeck());
+        System.out.println(cardTypeB.checkCardBelongsOfStandardDeck());
         System.out.println(cardTypeB1.equals(cardTypeB2));
 
         System.out.println(cardTypeB.compareCards(cardTypeB1));

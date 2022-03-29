@@ -1,5 +1,5 @@
 
-public class Main {
+public class MainFileSystem {
 
     public static void main(String[] args) {
         Folder root = new Folder("root", null);

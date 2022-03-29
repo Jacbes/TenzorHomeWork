@@ -5,8 +5,8 @@ public class CardTypeB implements Comparable<CardTypeB> {
     private static final String[] ALLOWED_SUITS = new String[]{"Clubs", "Diamonds", "Spades", "Hearts", "Joker"};
     private static final String[] SUITS_AFTER_TEN = new String[]{"Jack", "Queen", "King", "Ace"};
 
-    private int rank;
-    private String suit;
+    private final int rank;
+    private final String suit;
 
     public CardTypeB(int rank, String inSuit) {
         this.rank = rank;
@@ -51,7 +51,7 @@ public class CardTypeB implements Comparable<CardTypeB> {
         return 17 * rank + suit.hashCode();
     }
 
-    public boolean checkCardBelongsOfStandartDeck() {
+    public boolean checkCardBelongsOfStandardDeck() {
         if (this.suit == null) {
             return false;
         }
