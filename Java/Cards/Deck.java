@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Deck {
 
-    private static final List<CardTypeB> listCardsTypeB  = new ArrayList<>();
+    private static final List<CardTypeB> listCardsTypeB = new ArrayList<>();
 
     private Deck(boolean includeJokers) {
         String[] suits = new String[]{"Clubs", "Diamonds", "Spades", "Hearts"};
