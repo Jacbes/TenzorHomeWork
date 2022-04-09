@@ -92,4 +92,9 @@ class ReceiverFragment : Fragment() {
         super.onDetach()
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        Log.i("LifecycleTag", "ReceiverFragment: onSaveInstanceState")
+        super.onSaveInstanceState(outState)
+    }
+
 }

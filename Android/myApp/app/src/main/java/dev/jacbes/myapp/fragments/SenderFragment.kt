@@ -42,6 +42,36 @@ class SenderFragment : Fragment() {
             model.changeMessage("Hello")
             replaceFragment()
         }
+
+        view.findViewById<Button>(R.id.sender_fragment_add_button).setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .add(R.id.main_activity, ReceiverFragment())
+                .commit()
+        }
+
+        view.findViewById<Button>(R.id.sender_fragment_replace_button).setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.main_activity, ReceiverFragment())
+                .commit()
+        }
+
+        view.findViewById<Button>(R.id.sender_fragment_add_backstack_button).setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .add(R.id.main_activity, ReceiverFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        view.findViewById<Button>(R.id.sender_fragment_replace_backstack_button).setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.main_activity, ReceiverFragment())
+                .addToBackStack(null)
+                .commit()
+        }
     }
 
     private fun replaceFragment() {
@@ -86,6 +116,11 @@ class SenderFragment : Fragment() {
     override fun onDetach() {
         Log.i("LifecycleTag", "SenderFragment: onDetach")
         super.onDetach()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        Log.i("LifecycleTag", "ReceiverFragment: onSaveInstanceState")
+        super.onSaveInstanceState(outState)
     }
 
 }
