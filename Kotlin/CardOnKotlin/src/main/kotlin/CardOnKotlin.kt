@@ -1,4 +1,3 @@
-
 class CardOnKotlin(inRank: Int, inSuit: String) {
 
     enum class Suit {
@@ -9,33 +8,28 @@ class CardOnKotlin(inRank: Int, inSuit: String) {
     }
 
     enum class Rank(private val rv: Int) {
-        Two(2),
-        Three(3),
-        Four(4),
-        Five(5),
-        Six(6),
-        Seven(7),
-        Eight(8),
-        Nine(9),
-        Ten(10),
-        Jack(11),
-        Queen(12),
-        King(13),
-        Ace(14),
-        Joker(15);
+        TWO(2),
+        THREE(3),
+        FOUR(4),
+        FIVE(5),
+        SIX(6),
+        SEVEN(7),
+        EIGHT(8),
+        NINE(9),
+        TEN(10),
+        JACK(11),
+        QUEEN(12),
+        KING(13),
+        ACE(14),
+        JOKER(15);
 
         fun getRankValue(): Int {
             return rv
         }
     }
 
-    private val rank: Rank?
-    private val suit: Suit?
-
-    init {
-        rank = checkRank(inRank)
-        suit = checkSuit(inSuit)
-    }
+    private val rank = checkRank(inRank)
+    private val suit = checkSuit(inSuit)
 
     private fun checkRank(inRank: Int): Rank? {
         return if (inRank < 2 || inRank > 15) {
