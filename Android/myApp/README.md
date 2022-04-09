@@ -8,10 +8,10 @@
 3) Какой колбэк будет обработан последним в каждом из фрагментов?
 
 Транзакции X:
-1) add
-2) replace
-3) add + addToBackStack
-4) replace + addToBackStack
+* add
+* replace
+* add + addToBackStack
+* replace + addToBackStack 
 
 
 1) Add
