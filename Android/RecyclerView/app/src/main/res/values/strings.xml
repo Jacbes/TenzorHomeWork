@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="add_employee_text">Add employee</string>
+    <string name="employee_photo_text">Employee photo</string>
+    <string name="favorite_icon_text">Favorite button</string>
+    <string name="delete_button_text">Delete button</string>
+</resources>
