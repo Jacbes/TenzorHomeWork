@@ -6,6 +6,8 @@
 действительно идет обращение в репозиторий с попыткой сохранения автора
 статьи.
 
+![](test.png)
+
 Предлагается ознакомиться с реализацией основных классов и тестов для них:
 
 * [MainViewModel](app/src/main/java/ru/tensor/testingapplication/ui/main/MainViewModel.kt) - реализация
